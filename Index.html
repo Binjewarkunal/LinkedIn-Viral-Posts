@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunal Binjewar | Premium Ghostwriting Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            /* Dark Mode Variables (Default) */
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.5);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --gradient-1: #60a5fa;
+            --gradient-2: #a855f7;
+            --btn-bg: rgba(10, 102, 194, 0.1);
+            --btn-text: #60a5fa;
+            --badge-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        .light-mode {
+            /* Light Mode Variables */
+            --bg-color: #f8fafc;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --accent: #2563eb;
+            --accent-glow: rgba(37, 99, 235, 0.2);
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: rgba(0, 0, 0, 0.1);
+            --gradient-1: #2563eb;
+            --gradient-2: #7e22ce;
+            --btn-bg: rgba(10, 102, 194, 0.1);
+            --btn-text: #0a66c2;
+            --badge-bg: rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            background-image: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.05), transparent 25%),
+                              radial-gradient(circle at 85% 30%, rgba(147, 51, 234, 0.05), transparent 25%);
+            background-attachment: fixed;
+        }
+
+        /* Nav & Theme Toggle */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px 40px;
+        }
+
+        #theme-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        #theme-toggle:hover {
+            transform: scale(1.1);
+            border-color: var(--accent);
+        }
+
+        /* Profile Header */
+        header {
+            text-align: center;
+            padding: 20px 20px 40px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 0 25px var(--accent-glow);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            background: linear-gradient(to right, var(--gradient-1), var(--gradient-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            font-weight: 500;
+        }
+
+        .badges-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .badge {
+            background: var(--badge-bg);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(5px);
+        }
+
+        .badge i {
+            color: var(--accent);
+        }
+
+        .badge span.humor {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        /* Grid & Cards */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 20px 0 60px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px var(--accent-glow);
+        }
+
+        .category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gradient-1);
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .metrics {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 12px 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .metric {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .metric i {
+            color: var(--gradient-2);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--btn-bg);
+            color: var(--btn-text);
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid var(--btn-text);
+            margin-top: auto;
+        }
+
+        .btn:hover {
+            background: var(--btn-text);
+            color: #fff;
+        }
+
+        /* Smooth reveal animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <button id="theme-toggle" aria-label="Toggle Theme">
+            <i class="fas fa-sun"></i>
+        </button>
+    </nav>
+
+    <header>
+        <img src="Kunal.png" alt="Kunal Binjewar" class="profile-img" id="profilePic">
+        
+        <h1>Kunal Binjewar</h1>
+        <p class="subtitle">Growth Strategy Consultant & Executive Ghostwriter. Turning market data into revenue and founder stories into inbound sales.</p>
+        
+        <div class="badges-container">
+            <div class="badge">
+                <i class="fa-solid fa-chart-line"></i> 4.5M+ Organic Impressions
+            </div>
+            <div class="badge">
+                <i class="fa-solid fa-users"></i> 19,834 Followers 
+                <span class="humor">(Basically 20K... where's the cake? 🎂)</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="grid" id="portfolio-grid">
+            </div>
+    </div>
+
+    <script>
+        // Theme Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggleBtn.querySelector('i');
+
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            if(body.classList.contains('light-mode')) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+
+        // The Posts Array
+        const posts = [
+            { category: "Case Study", title: "The Bankruptcy Marketing Masterclass", likes: "650+", views: "150K+", link: "https://www.linkedin.com/posts/kunalbinjewar_casestudy-bankruptcy-marketing-activity-7419621361062543360--vcw" },
+            { category: "Founder Stories", title: "Nikhil Kamath & The Billionaire Mindset", likes: "1k+", views: "130K+", link: "https://www.linkedin.com/posts/kunalbinjewar_nikhilkamath-entrepreneur-billionaire-activity-7410561192093573120-5EMI" },
+            { category: "Tech & Lifestyle", title: "The Reality of Bengaluru Tech Life", likes: "800+", views: "60K+", link: "https://www.linkedin.com/posts/kunalbinjewar_bengaluru-tech-life-activity-7434102939427807232-bdp4" },
+            { category: "Geopolitics", title: "Trade Wars & The Agricultural Impact", likes: "250+", views: "70K+", link: "https://www.linkedin.com/posts/kunalbinjewar_tradewar-geopolitics-agriculture-activity-7419259423317114882-_vyC" },
+            { category: "Business Models", title: "Cracking India's Healthcare Business Model", likes: "600K+", views: "35K+", link: "https://www.linkedin.com/posts/kunalbinjewar_healthcare-businessmodel-india-activity-7426486769229049856-zck-" },
+            { category: "Infrastructure & Tech", title: "Innovation Inside Indian Railways", likes: "500+", views: "85K+", link: "https://www.linkedin.com/posts/kunalbinjewar_innovation-tech-indianrailways-activity-7428303280734265344-UzRi" },
+            { category: "Startups", title: "The Unfiltered Startup Success Journey", likes: "450+", views: "55K+", link: "https://www.linkedin.com/posts/kunalbinjewar_startup-success-journey-activity-7433376544020103168-FUQ1" },
+            { category: "Big Tech", title: "Microsoft's Software Dominance Strategy", likes: "1k+", views: "200K+", link: "https://www.linkedin.com/posts/kunalbinjewar_microsoft-technology-software-activity-7401845347712622592-och1" },
+            { category: "Social Issues", title: "Wake Up Delhi: The Safety Reality", likes: "250+", views: "35K+", link: "https://www.linkedin.com/posts/kunalbinjewar_delhisaftety-wakeupdelhi-india-activity-7425044043778387968-68TW" },
+            { category: "Media & Governance", title: "Journalism & Government Dynamics in India", likes: "2.5k+", views: "370K+", link: "https://www.linkedin.com/posts/kunalbinjewar_journalism-goverment-india-activity-7379021202062823424-tHN6" },
+            { category: "Tech Innovation", title: "Innovation & The Tech Entrepreneur", likes: "1.6k+", views: "130K+", link: "https://www.linkedin.com/posts/kunalbinjewar_innovation-entrepreneur-technology-activity-7418187562177056768-V-fC" },
+            { category: "Founder Stories", title: "Arvind Srinivasan: Youth & Billionaire Vision", likes: "1k+", views: "100K+", link: "https://www.linkedin.com/posts/kunalbinjewar_arvindsrinivasan-billionaire-youth-activity-7380826449454448640-L0yZ" },
+            { category: "Career Strategy", title: "Building a Career of Success & Inspiration", likes: "1k+", views: "100K+", link: "https://www.linkedin.com/posts/kunalbinjewar_success-inspiration-career-activity-7431904904991924224-Q_TM" },
+            { category: "Career Strategy", title: "The Path to Success for Software Engineers", likes: "250+", views: "50K+", link: "https://www.linkedin.com/posts/kunalbinjewar_softwareengineer-success-career-activity-7430473711868137472-NxOp" },
+            { category: "Leadership", title: "Work Culture, Respect, and True Leadership", likes: "250+", views: "20K+", link: "https://www.linkedin.com/posts/kunalbinjewar_workculture-respect-leadership-activity-7429758893829967872-qU4U" },
+            { category: "Technology", title: "Future Tech & The Next Wave of Innovation", likes: "800+", views: "40K+", link: "https://www.linkedin.com/posts/kunalbinjewar_innovation-tech-future-activity-7427934402040578048-m87l" },
+            { category: "Case Study", title: "Founder Story: A Motivational Case Study", likes: "400+", views: "35K+", link: "https://www.linkedin.com/posts/kunalbinjewar_motivation-founderstory-casestudy-activity-7427214711722545152-gyFr" },
+            { category: "Lifestyle & Travel", title: "Travel & Experiencing the Dream World", likes: "500+", views: "55K+", link: "https://www.linkedin.com/posts/kunalbinjewar_travel-dream-world-activity-7434820457587159040-5t-T" }
+        ];
+
+        // 1. Function to convert "150K+" into a real number (150000) for sorting
+        function parseViewsToNumber(viewString) {
+            let num = parseFloat(viewString.replace(/[^0-9.]/g, ''));
+            if (viewString.toUpperCase().includes('M')) return num * 1000000;
+            if (viewString.toUpperCase().includes('K')) return num * 1000;
+            return num;
+        }
+
+        // 2. Automatically Sort Posts from Highest Views to Lowest
+        posts.sort((a, b) => parseViewsToNumber(b.views) - parseViewsToNumber(a.views));
+
+        const grid = document.getElementById('portfolio-grid');
+
+        // 3. Render the sorted posts
+        posts.forEach((post, index) => {
+            const delay = index * 0.05; // Staggered animation
+            
+            const cardHTML = `
+                <div class="card" style="animation-delay: ${delay}s">
+                    <div>
+                        <span class="category">${post.category}</span>
+                        <h2 class="card-title">${post.title}</h2>
+                        <div class="metrics">
+                            <span class="metric"><i class="fa-solid fa-thumbs-up"></i> ${post.likes}</span>
+                            <span class="metric"><i class="fa-solid fa-eye"></i> ${post.views} Impressions</span>
+                        </div>
+                    </div>
+                    <a href="${post.link}" target="_blank" class="btn">
+                        <i class="fa-brands fa-linkedin"></i> Read Post
+                    </a>
+                </div>
+            `;
+            grid.innerHTML += cardHTML;
+        });
+    </script>
+</body>
+</html>
